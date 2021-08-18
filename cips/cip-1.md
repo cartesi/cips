@@ -38,7 +38,7 @@ A CIP must meet certain minimum criteria. It must be a clear and complete descri
 
 Parties involved in the process are you, the champion or *CIP author*, the *CIP editors* and the *Cartesi Core Developers*.
 
-Before you begin writing a formal CIP, you must vet your idea. You must start a discussion by filing an issue on [the Cartesi Governance repository] in order to ask the Cartesi community for feedback. Once a CIP discussion is created, it will be announced on several of Cartesi’s social media channels to invite the community to participate. Prior to starting a formal discussion on the Cartesi Governance repository, you can also carry out preliminary discussions on other Cartesi social media channels or on any other forum.
+Before you begin writing a formal CIP, you must vet your idea. You must start a discussion by creating a thread on the [Cartesi Governance Forum] in order to ask the Cartesi community for feedback. Once a CIP discussion is started, it will be announced on several of Cartesi’s social media channels to invite the community to participate. Prior to starting a formal discussion on the Cartesi Governance Forum, you can also carry out preliminary discussions on other Cartesi social media channels or on any other forum.
 
 Once the idea has been vetted, your next responsibility will be to present (by means of a CIP) the idea to the reviewers and all interested parties, invite editors, developers, and the community to give further feedback. You should try and gauge whether the interest in your CIP is commensurate with both the work involved in implementing it and how many parties will have to conform to it. For example, the work required for implementing a Core CIP will be much greater than for an Application CIP and the CIP will need sufficient interest from Cartesi implementers. Negative community feedback will be taken into consideration and may prevent your CIP from moving past the Draft stage.
 
@@ -99,7 +99,7 @@ Each CIP must begin with an [RFC 822](https://www.ietf.org/rfc/rfc822.txt) style
 
 ` author:` *a list of the author's or authors' name(s) and/or username(s), or name(s) and email(s). Details are below.*
 
-` discussions-to:` *a URL pointing to the corresponding discussion thread on the [Cartesi Governance Forum](https://github.com/cartesi/cips/discussions)*
+` discussions-to:` *a URL pointing to the corresponding discussion thread on the [Cartesi Governance Forum]*
 
 ` status:` *Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
 
@@ -161,7 +161,7 @@ The current CIP editors are
 
 For each new CIP that comes in, an editor does the following:
 
-- Ensure that the CIP has a corresponding thread on the [Cartesi Governance Forum](https://github.com/cartesi/cips/discussions) and that the discussion around the governance issue displays basic maturity.
+- Ensure that the CIP has a corresponding thread on the [Cartesi Governance Forum] and that the discussion around the governance issue displays basic maturity.
 - Read the CIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
 - The title should accurately describe the content.
 - Check the CIP for language (spelling, grammar, sentence structure, etc.), markup (GitHub flavored Markdown), code style.
@@ -187,7 +187,7 @@ The CIP process is derived heavily from [Ethereum’s EIP-1], and the community 
 [markdown]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 [Ethereum’s EIP-1]: https://github.com/ethereum/eips
 [Polygon Improvement Proposal]: https://forum.matic.network/t/polygon-improvement-proposals/630
-[the Cartesi Governance repository]: https://github.com/cartesi/cips/
+[Cartesi Governance Forum]: https://github.com/cartesi/cips/discussions
 
 ## Copyright
 
