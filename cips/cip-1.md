@@ -5,6 +5,7 @@ status: Living
 type: Meta
 author: The Cartesi Core Developers <https://cartesi.io>
 created: 2021-04-19
+updated: 2021-08-18
 ---
 
 ## What is a CIP?
@@ -98,7 +99,7 @@ Each CIP must begin with an [RFC 822](https://www.ietf.org/rfc/rfc822.txt) style
 
 ` author:` *a list of the author's or authors' name(s) and/or username(s), or name(s) and email(s). Details are below.*
 
-` discussions-to:` *a URL pointing to the corresponding issue on the Cartesi Governance repository*
+` discussions-to:` *a URL pointing to the corresponding discussion thread on the [Cartesi Governance Forum](https://github.com/cartesi/cips/discussions)*
 
 ` status:` *Draft, Review, Last Call, Final, Stagnant, Withdrawn, Living*
 
@@ -160,7 +161,7 @@ The current CIP editors are
 
 For each new CIP that comes in, an editor does the following:
 
-- Ensure that the CIP has a corresponding issue filed on the CartesI Governance repository and that the discussion on that issue displays basic maturity.
+- Ensure that the CIP has a corresponding thread on the [Cartesi Governance Forum](https://github.com/cartesi/cips/discussions) and that the discussion around the governance issue displays basic maturity.
 - Read the CIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to get to final status.
 - The title should accurately describe the content.
 - Check the CIP for language (spelling, grammar, sentence structure, etc.), markup (GitHub flavored Markdown), code style.
