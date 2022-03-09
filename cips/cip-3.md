@@ -46,7 +46,7 @@ It is clear that it solves the chicken-egg problem by saying that the initial ha
 
 It does not alter the usage/development/deployment/disputes concerning the application.
 
-It does require that the off-chain machine process the first input in a special way (different from the typical inputs when the application is running), but this can be done with a library or throught the HTTP API, without extra work required from the developer.
+It does require that the off-chain machine process the first input in a special way (different from the typical inputs when the application is running), but this can be done with a library or through the HTTP API, without extra work required from the developer.
 
 The *Setup Input* can expand and include extra information for setting up the application in the future.
 
