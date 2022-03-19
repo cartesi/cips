@@ -73,6 +73,12 @@ Therefore it is recommendable that applications try to keep the number of protoc
 The reference library for establishing the protocol version should be throughly tested with non-conformant inputs.
 Some malformed headers should not trick the application into undefined or dangerous behavior.
 
+## Referring to an Input Protocol
+
+The suggestion of this CIP is that every Input Protocol to be specified should be called by `IP-<header>`, where `<header>` stands for the hexadecimal description of the header of the protocol.
+
+For example, protocol zero should be referred to by `IP-00`, while the protocol 130 should be `IP-8002`.
+
 ## References
 
 [UTF-8 Specs](https://datatracker.ietf.org/doc/html/rfc3629)
