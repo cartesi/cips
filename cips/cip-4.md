@@ -40,6 +40,10 @@ Its encoding is inspired (although slightly different) by the UTF-8 standard.
 - The first byte is used to specify the size of the header, but it also contains some bits for the protocol itself;
 - All the other bytes are used to store the protocol version.
 
+|--------|----------------|
+| header | binary payload |
+|--------|----------------|
+
 Here is a table describing the encoding:
 
 |                  |   byte 1 | byte 2   | byte 3   | byte4    |
@@ -76,8 +80,10 @@ Some malformed headers should not trick the application into undefined or danger
 ## Referring to an Input Protocol
 
 The suggestion of this CIP is that every Input Protocol to be specified should be called by `IP-<header>`, where `<header>` stands for the hexadecimal description of the header of the protocol.
+Optionally, one can give a readable name to the protocol to be written after the code.
 
 For example, protocol zero should be referred to by `IP-00`, while the protocol 130 should be `IP-8002`.
+It could be mentioned as `IP-8002 My example protocol` to make the name explicit.
 
 ## References
 
