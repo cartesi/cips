@@ -1,9 +1,10 @@
 ---
 cip: 3
-title: Setup Input 
+title: Setup Input
 status: Draft
 type: Core
 author: [Felipe Argento](felipe.argento@cartesi.io), [Guilherme Dantas](guilherme.dantas@cartesi.io), [Augusto Teixeira](augusto.teixeira@cartesi.io)
+discussions-to: https://github.com/cartesi/cips/discussions/8
 created: 2022-03-09
 ---
 
