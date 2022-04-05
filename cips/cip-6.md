@@ -45,6 +45,8 @@ Calling the `newApplication` method will:
 - offer an endpoint for the above array.
 - emit an event containing: the constructor arguments, the `RollupsId` and the address of the application.
 
+The necessity for an array to store the addresses has been questioned by @tuler.
+
 ## Rationale
 
 Factories are a common design pattern for deploying an unlimited number of identical smart contracts, which is the case for our Rollups solution.
@@ -54,7 +56,8 @@ The Factory design is simple to implement and brings the following advantages:
 - It will be possible to deploy new applications both from Metamask and from another contract in L1 (think Computational Oracles or Poker World);
 - [Currently](https://github.com/ethereum/EIPs/issues/2294), a chain is identified by the 64-bit integer ChainId, which is enough to store any number of Rollups applications we may desire, but it is not enough to embed the address of a given application within the ChainId.
 With this CIP, it would be possible to store the `RollupsId` inside the `ChainId`;
-- It would make sure that the Setup Input is correctly formed and sent by a trusted source (the Factory itself).
+- It would make sure that the Setup Input is correctly formed and sent by a trusted source (the Factory itself);
+- As noted by @tuler, the event emitted by the factory when new instances are created can be tracked off-chain and help the automation of validators and other infrastructure.
 
 ## Security Considerations
 
