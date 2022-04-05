@@ -19,7 +19,7 @@ Some advantages of this proposed change include:
 The current implementation of Rollups requires the manual deployment of the diamond smart contract that manages the application (although the libraries themselves are fixed).
 This architecture poses a few challenges such as:
 - Requiring Hardhat for deployment (instead of a simple Metamask transaction);
-- Makes it impractical for a mart contract on L1 to launch a Rollups instance (which would be useful for computational oracles);
+- Makes it impractical for a smart contract on L1 to launch a Rollups instance (which would be useful for computational oracles);
 - Making it harder to verify the code of existing Rollups diamonds as originating from the reference implementation;
 - Forcing every application to be identified through its 20 bytes long address (which does not fit inside a ChainId and harms compression);
 - It is not easy to enforce that the Setup Input be the first input to arrive to a rollups application.
@@ -28,7 +28,7 @@ This architecture poses a few challenges such as:
 
 With the implementation of this CIP, every new Rollups version to be released will come accompanied by the deployment of a `Factory` Smart Contract.
 
-Each new application deployed on Cartesi will do so by calling the `newApplication` method of the `Factory`, which have the following parameters:
+Each new application deployed on Cartesi will do so by calling the `newApplication` method of the `Factory`, which has the following parameters:
 - `inputDuration` (uint);
 - `challengePeriod` (uint);
 - `inputLog2Size` (uint8);
@@ -41,7 +41,7 @@ Calling the `newApplication` method will:
 - configure the Rollups with arguments to the constructor;
 - send the Setup Input responsible for informing the Cartesi Machine about its deployment address;
 - create a new (4 bytes) `RollupsId` for the recently deployed application;
-- store a an array, indexed by `RollupsId`s and providing its deployed addresses;
+- store an array, indexed by `RollupsId`s and providing its deployed addresses;
 - offer an endpoint for the above array.
 - emit an event containing: the constructor arguments, the `RollupsId` and the address of the application.
 
