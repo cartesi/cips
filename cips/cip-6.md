@@ -51,10 +51,11 @@ Factories are a common design pattern for deploying an unlimited number of ident
 
 The Factory design is simple to implement and brings the following advantages:
 - It will be much easier to guarantee the legitimacy of the code of a Rollups Diamond;
-- It will be possible to deploy new applications both from Metamask and from another contract in L1 (think Computational Oracles or Poker World);
+- It will be possible to deploy new applications from: Metamask another contract in L1 (think Computational Oracles) or another Rollups (through vouchers);
 - [Currently](https://github.com/ethereum/EIPs/issues/2294), a chain is identified by the 64-bit integer ChainId, which is enough to store any number of Rollups applications we may desire, but it is not enough to embed the address of a given application within the ChainId.
 With this CIP, it would be possible to store the `RollupsId` inside the `ChainId`;
-- As noted by @tuler, the event emitted by the factory when new instances are created can be tracked off-chain and help the automation of validators and other infrastructure.
+- As noted by @tuler, the event emitted by the factory when new instances are created can be tracked off-chain and help the automation of validators and other infrastructure;
+- This CIP will facilitate the future implementation of a "Single Validator for All Rollups", since it will be easier to build a State Fold that follows all the Rollups that concern a given validator.
 
 ## Security Considerations
 
