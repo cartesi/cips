@@ -4,6 +4,7 @@ title: Rollups Factory
 status: Draft
 type: Core
 author: Augusto Teixeira
+discussions-to: https://github.com/cartesi/cips/discussions/13
 created: 2022-04-04
 ---
 
