@@ -29,6 +29,7 @@ This architecture poses a few challenges such as:
 With the implementation of this CIP, every new Rollups version to be released will come accompanied by the deployment of a `Factory` Smart Contract.
 
 Each new application deployed on Cartesi will do so by calling the `newApplication` method of the `Factory`, which has the following parameters:
+- `diamondOwner` (address);
 - `inputDuration` (uint);
 - `challengePeriod` (uint);
 - `inputLog2Size` (uint8);
@@ -37,10 +38,11 @@ Each new application deployed on Cartesi will do so by calling the `newApplicati
 - other fields to be discussed.
 
 Calling the `newApplication` method will:
-- call the Solidity `new` method to create a Rollups Diamond;
-- configure the Rollups with arguments to the constructor;
+- create a new Diamond contract with all the essential facets (for cutting facets and managing ownership);
+- make a cut into the Diamond that (1) adds all the Rollups-related facets and (2) initializes them with the provided arguments;
+- pass the ownership over the Diamond (role that allows one to cut facets) to the `diamondOwner`;
 - create a new (4 bytes) `RollupsId` for the recently deployed application;
-- store an array, indexed by `RollupsId`s and providing its deployed addresses;
+- store the address of the deployed application in an array, indexed by the newly-created `RollupsId`;
 - offer an endpoint for the above array.
 - emit an event containing: the constructor arguments, the `RollupsId` and the address of the application.
 
