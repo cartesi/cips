@@ -3,6 +3,7 @@ cip: 4
 title: Input Protocols
 status: Draft
 type: Core CIP
+discussion-to: https://github.com/cartesi/cips/discussions/15
 author: Augusto Teixeira
 created: 2022-03-18
 ---
