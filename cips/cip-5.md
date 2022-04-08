@@ -3,6 +3,7 @@ cip: 5
 title: Aggregated Inputs Protocol
 status: Draft
 type: Core CIP
+discussion-to: https://github.com/cartesi/cips/discussions/17
 author: Augusto Teixeira
 created: 2022-03-19
 ---
