@@ -53,7 +53,7 @@ Every input abiding by this protocol will be composed of five parts (see table b
   - The *Transactions Header* is composed of four bytes, specifying (in little endian) the *Transactions Protocol* used to encode the collection of transactions present in the input.
   - The *Transactions Payload* field contains the actual data representing the inputs and it should be encoded according to the Transactions Protocol described in the *Transactions Header* above.
 - The *Signatures* field makes up the remainder of the message and it is composed of two parts, which mimic exactly the *Transactions* field:
-  - The *Signatures Header* is composed of four bytes, specifying (in little endian) the *Signatures Protocol* protocol used to encode the collection of transactions present in the input.
+  - The *Signatures Header* is composed of four bytes, specifying (in little endian) the *Signatures Protocol* used to encode the collection of transactions present in the input.
   - The *Signatures Payload* field contains the actual data necessary for signature verification.
   It should be encoded according to the Signatures Protocol described in the *Signatures Header* above.
 
@@ -65,7 +65,7 @@ Every input abiding by this protocol will be composed of five parts (see table b
 +-------------+--------+--------------+--------+-------------+
 ```
 
-This CIP does not specify any Aggregation Protocol or Signature Protocol, as these will be done in future CIPs.
+This CIP does not specify any Transaction Protocol or Signature Protocol, as these will be done in future CIPs.
 
 ### Transaction Formatting
 
@@ -114,7 +114,7 @@ Observe that a few fields are missing in this example, such as `nonce` (which ca
 
 After decoding an array of transactions from the *Transactions* field, the protocol should verify the validity of each signature.
 
-Although the Signature Protocol is free to chose any cryptography scheme, it is desirable to use some system that facilitates the use of existing tools, such as Metamask.
+Although the Signature Protocol is free to choose any cryptography scheme, it is desirable to use some system that facilitates the use of existing tools, such as Metamask.
 
 Although this CIP does not specify any *Signatures Protocol*, it is instructive to consider two examples for illustration purposes:
 - an array of `{v, r, s}` values (as specified in Ethereum), one triple per transaction;
@@ -124,7 +124,7 @@ Although this CIP does not specify any *Signatures Protocol*, it is instructive 
 
 The main point of the current CIP is to specify an input that describes aggregated transactions, while observing the following points:
 - the processes of encoding transactions and verifying their signatures should be split, in an effort to allow these very different tasks to evolve in separate;
-- there should be freedom to chose between many different encodings of transactions and signatures as compression/aggregation techniques progress on each front.
+- there should be freedom to choose between many different encodings of transactions and signatures as compression/aggregation techniques progress on each front.
 - the "interface" between encoding transactions and verifying their signatures should be well established to fix a standard;
 
 A few details of implementation are justified below:
