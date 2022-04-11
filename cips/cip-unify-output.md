@@ -3,6 +3,7 @@ cip: unify-outputs
 title: Unify Rollups outputs
 status: Draft
 type: Core
+discussion-to: https://github.com/cartesi/cips/discussions/21
 author: Augusto Teixeira (idea by Diego Nehab)
 created: 2022-04-11
 ---
