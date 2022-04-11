@@ -140,10 +140,10 @@ Although of course the tests should stress the decoding and malformed inputs to 
 
 ## Referring to Protocols
 
-The suggestion of this CIP is that every Transactions Protocol should be identified by `TP-<header>`, where `<header>` stands for the hexadecimal description of the (4-bytes) header of the protocol.
-Example `TP-0000ba23`.
+The suggestion of this CIP is that every Transactions Protocol should be identified by `TP-<header-without-leading-zeros>`, where `<header-without-leading-zeros>` stands for the hexadecimal description of the (4-bytes) header of the protocol with the leading zeros *bytes* removed.
+Example the Transaction Protocol with header `0000ba23` would be refered to as `TP-ba23`, or `00000111` becomes `TP-01111`.
 
-Similarly, Signatures Protocols should be refereed by `SP-<header>`, such as `SP-0000bbf2`.
+Similarly, Signatures Protocols should be refereed by `SP-<header-without-leading-zeros>`, such as `SP-f2` or `SP-0c`.
 
 ## References
 
