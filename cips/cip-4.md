@@ -31,8 +31,8 @@ Each protocol version will be specified in their separate CIPs.
 
 After this CIP is accepted, every input to a Cartesi Rollups Machine will be composed of two parts: a header and a payload.
 
-- The *header* will take between `1` and `4` bytes and it will specify the protocol number of the input, between `0` and `270,549,119`.
-- The *payload* can be an arbitrary sequence of bytes that abides by the protocol number specified in the header.
+- The *header* will take between `1` and `4` bytes and it will specify the protocol number of the input, between `0` and `268,435,456`.
+- The *payload* is a sequence of bytes that abides by the protocol whose number is specified in the header.
 
 This CIP does not specify any protocol as this will be done in future CIPs.
 
@@ -41,20 +41,44 @@ Its encoding is inspired (although slightly different) by the UTF-8 standard.
 - The first byte is used to specify the size of the header, but it also contains some bits for the protocol itself;
 - All the other bytes are used to store the protocol version.
 
-|--------|----------------|
-| header | binary payload |
-|--------|----------------|
+```
++--------------------+--------------------------+
+| header (1-4 bytes) | binary payload (n bytes) |
++--------------------+--------------------------+
+```
 
-Here is a table describing the encoding:
+Here is a table describing the encoding of the protocol number:
 
-|                  |   byte 1 | byte 2   | byte 3   | byte4    |
-|------------------|----------|----------|----------|----------|
-| 1 byte encoding  | 0xxxxxxx |          |          |          |
-| 2 bytes encoding | 10xxxxxx | xxxxxxxx |          |          |
-| 3 bytes encoding | 110xxxxx | xxxxxxxx | xxxxxxxx |          |
-| 4 bytes encoding | 1110xxxx | xxxxxxxx | xxxxxxxx | xxxxxxxx |
+| protocol number range<br>(hexadecimal) | octet sequence<br>(binary) |
+| -: | :- |
+| `0000 0000` - `0000 007F` | `0xxxxxxx`                            |
+| `0000 0080` - `0000 3FFF` | `10xxxxxx xxxxxxxx`                   |
+| `0000 4000` - `001F FFFF` | `110xxxxx xxxxxxxx xxxxxxxx`          |
+| `0020 0000` - `0FFF FFFF` | `1110xxxx xxxxxxxx xxxxxxxx xxxxxxxx` |
 
-It is clear that the number of protocol versions allowed in this specification is given by: `2^7 + 2^14 + 2^21 + 2^28 = 270,549,120`.
+It is clear that the number of protocol versions allowed by this encoding is given by 2<sup>28</sup> = 268,435,456.
+
+Encoding a protocol number in this format proceeds as follows:
+
+1. Determine the number of octets required from the protocol number
+   and the first column of the table above.  It is important to note
+   that the rows of the table are mutually exclusive, i.e., there is
+   only one valid way to encode a given protocol number.
+
+2. Prepare the high-order bits of the first octet as per the second
+   column of the table.
+
+3. Fill in the bits marked `x` from the bits of the protocol number,
+   expressed in binary. Any remaining `x` bits should be filled with `0`.
+
+To avoid any doubts, it's instructive to give some examples of encoded protocol numbers:
+
+| protocol number<br>(decimal) | octet sequence<br>(binary) |
+| -: | :- |
+| 42 | `00101010` |
+| 721 | `10000010 11010001` |
+| 123456 | `11000001 11100010 01000000` |
+| 123456789 | `11100111 01011011 11001101 00010101` |
 
 The first implementation of the parser for this CIP could be restricted to supporting only one-byte encodings.
 This would restrict the number of protocols to `128`, but it would have a few advantages:
