@@ -71,7 +71,18 @@ Encoding a protocol number in this format proceeds as follows:
 3. Fill in the bits marked `x` from the bits of the protocol number,
    expressed in binary. Any remaining `x` bits should be filled with `0`.
 
-To avoid any doubts, it's instructive to give some examples of encoded protocol numbers:
+Decoding a protocol number in this format proceeds as follows:
+
+1. Determine the number of octets `n` from the length of the prefix.
+   The prefix is composed of zero or more `1` bits followed by one `0`.
+
+2. Read the first `n` octets and remove the first `n` bits from it
+   (that is, the prefix).
+
+3. The remaining bits encode the protocol number in binary.
+
+Both procedures were implemented in Lua for reference ([encode.lua](../assets/cip-4/encode.lua), [decode.lua](../assets/cip-4/decode.lua)).
+To avoid any doubts, it's also instructive to give here some examples of encoded protocol numbers:
 
 | protocol number<br>(decimal) | octet sequence<br>(binary) |
 | -: | :- |
