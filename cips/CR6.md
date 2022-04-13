@@ -1,5 +1,5 @@
 ---
-cip: 3
+cip: CR6
 title: Setup Input
 status: Draft
 type: Core
