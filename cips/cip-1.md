@@ -156,6 +156,7 @@ If you are interested in assuming ownership of a CIP, send a message asking to t
 The current CIP editors are
 
 - Fabiana Cecin (@fcecin)
+- Felipe Argento (@felipeargento)
 
 ## CIP Editor Responsibilities
 
