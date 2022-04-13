@@ -1,6 +1,6 @@
 ---
-cip: 2
-title: The Cartesi Foundation and the CIP 
+cip: IN2
+title: The Cartesi Foundation and the CIP
 status: Final
 type: Informational
 author: The Cartesi Foundation <https://cartesi.io>
